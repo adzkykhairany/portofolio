@@ -1,12 +1,15 @@
 import Image from "next/image";
+import SectionGlow from "@/components/SectionGlow";
 
 export default function About() {
   return (
     <section
-    id="about"
-    className="scroll-mt-6 px-6 pb-24 pt-12 md:pb-32 md:pt-16"
+      id="about"
+      className="relative scroll-mt-6 overflow-hidden px-6 pb-24 pt-12 md:pb-32 md:pt-16"
     >
-      <div className="mx-auto w-full max-w-7xl">
+      <SectionGlow position="top-right" />
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl">
         {/* Section Label */}
         <p className="mb-16 text-xs font-medium uppercase tracking-[0.35em] text-foreground/40">
           01 — About Me
@@ -42,7 +45,7 @@ export default function About() {
 
             {/* Information */}
             <div className="mt-16 grid gap-10 border-t border-foreground/10 pt-8 sm:grid-cols-2">
-              {/* Exploring */}
+              {/* Area of Interest */}
               <div>
                 <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.3em] text-foreground/40">
                   01 — Area of Interest

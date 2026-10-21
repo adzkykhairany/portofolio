@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import { Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { sendContactEmail } from "@/app/actions/contact";
+import SectionGlow from "@/components/SectionGlow";
 
 export default function Contact() {
   const [isSending, setIsSending] = useState(false);
@@ -23,32 +24,34 @@ export default function Contact() {
     const result = await sendContactEmail(formData);
 
     if (result.success) {
-        form.reset();
+      form.reset();
 
-        setStatus({
+      setStatus({
         type: "success",
         message: "Message sent successfully.",
-        });
+      });
 
-        setTimeout(() => {
+      setTimeout(() => {
         setStatus(null);
-        }, 10000);
+      }, 10000);
     } else {
-        setStatus({
+      setStatus({
         type: "error",
         message: result.error ?? "Something went wrong. Please try again.",
-        });
+      });
     }
 
     setIsSending(false);
-    }
+  }
 
   return (
     <section
       id="contact"
-      className="scroll-mt-16 px-6 pb-0 pt-6 md:pt-8"
+      className="relative scroll-mt-16 overflow-hidden px-6 pb-0 pt-6 md:pt-8"
     >
-      <div className="mx-auto w-full max-w-7xl">
+      <SectionGlow position="bottom-right" />
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl">
         {/* Section Label */}
         <p className="mb-12 text-xs font-medium uppercase tracking-[0.35em] text-foreground/40">
           05 — Contact
@@ -59,14 +62,14 @@ export default function Contact() {
           {/* Left */}
           <div>
             <h2 className="max-w-xl text-[clamp(3rem,6vw,5.5rem)] font-medium leading-[0.9] tracking-tighter">
-                Let&apos;s
-                <br />
-                <span className="text-foreground/40">connect.</span>
+              Let&apos;s
+              <br />
+              <span className="text-foreground/40">connect.</span>
             </h2>
 
             <p className="mt-8 max-w-md text-sm leading-relaxed text-foreground/60 md:text-base">
-                Whether it&apos;s an opportunity, a project, or simply a conversation,
-                I&apos;d be glad to connect.
+              Whether it&apos;s an opportunity, a project, or simply a
+              conversation, I&apos;d be glad to connect.
             </p>
 
             {/* Contact Details */}
@@ -176,7 +179,7 @@ export default function Contact() {
 
           <div className="flex items-center gap-6">
             <a
-              href="https://github.com/adzkykhairany"
+              href="https://github.com/adzkyykhairany"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-primary"

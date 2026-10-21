@@ -4,11 +4,15 @@ export default function Hero() {
       id="home"
       className="relative flex min-h-[calc(100vh-73px)] items-center overflow-hidden px-6 py-20"
     >
-      <div className="mx-auto flex w-full max-w-7xl flex-col">
+      {/* Background Glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-32 top-1/4 h-125 w-125 rounded-full bg-[radial-gradient(circle,rgba(217,119,6,0.14)_0%,rgba(245,158,11,0.06)_35%,transparent_70%)] blur-3xl dark:bg-[radial-gradient(circle,rgba(217,119,6,0.18)_0%,rgba(245,158,11,0.07)_35%,transparent_70%)]"
+      />
 
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col">
         {/* Main Content */}
         <div className="grid items-end gap-10 lg:grid-cols-[1fr_280px]">
-
           {/* Headline */}
           <h1 className="max-w-5xl text-[clamp(3.5rem,6.5vw,6.5rem)] font-medium uppercase leading-[0.85] tracking-[-0.06em]">
             Data, Models,

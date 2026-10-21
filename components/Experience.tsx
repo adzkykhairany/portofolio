@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SectionGlow from "@/components/SectionGlow";
 
 export default function Experience() {
   const [hmifOpen, setHmifOpen] = useState(false);
@@ -9,16 +10,17 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="scroll-mt-16 px-6 pb-24 pt-10 md:pb-32 md:pt-14"
+      className="relative scroll-mt-16 overflow-hidden px-6 pb-24 pt-10 md:pb-32 md:pt-14"
     >
-      <div className="mx-auto w-full max-w-7xl">
+      <SectionGlow position="bottom-right" />
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl">
         {/* Section Label */}
         <p className="mb-10 text-xs font-medium uppercase tracking-[0.35em] text-foreground/40">
           03 — Experience
         </p>
 
         <div className="border-y border-foreground/10">
-
           {/* =========================
               BCA
           ========================== */}
@@ -60,7 +62,6 @@ export default function Experience() {
               HMIF
           ========================== */}
           <div className="border-b border-foreground/10">
-
             {/* HMIF Header */}
             <button
               type="button"
@@ -101,7 +102,6 @@ export default function Experience() {
             >
               <div className="min-h-0 overflow-hidden">
                 <div className="border-t border-foreground/10 pb-8 pt-7 md:ml-57">
-
                   {/* Supervisor */}
                   <div className="grid gap-3 pb-7 md:grid-cols-[1fr_140px]">
                     <div>
@@ -111,8 +111,8 @@ export default function Experience() {
 
                       <ul className="mt-3 space-y-2 text-sm leading-relaxed text-foreground/60">
                         <li>
-                          • Coordinated and supervised 60+ members&apos;
-                          daily operations.
+                          • Coordinated and supervised 60+ members&apos; daily
+                          operations.
                         </li>
                         <li>
                           • Ensured all work programs were aligned with
@@ -143,8 +143,8 @@ export default function Experience() {
                           documents with a structured filing system.
                         </li>
                         <li>
-                          • Increased document retrieval efficiency through
-                          a new archiving system.
+                          • Increased document retrieval efficiency through a
+                          new archiving system.
                         </li>
                         <li>
                           • Standardized document management procedures across
@@ -171,8 +171,8 @@ export default function Experience() {
                           system for documents and inventory.
                         </li>
                         <li>
-                          • Ensured document accuracy and accessibility for
-                          the team.
+                          • Ensured document accuracy and accessibility for the
+                          team.
                         </li>
                         <li>
                           • Supported collaboration between secretariat and
@@ -185,7 +185,6 @@ export default function Experience() {
                       Mar 2022 — Feb 2023
                     </p>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -195,7 +194,6 @@ export default function Experience() {
               COMMITTEE
           ========================== */}
           <div>
-
             {/* Committee Header */}
             <button
               type="button"
@@ -231,9 +229,7 @@ export default function Experience() {
             {/* Committee Details */}
             <div
               className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
-                committeeOpen
-                  ? "grid-rows-[1fr]"
-                  : "grid-rows-[0fr]"
+                committeeOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
               }`}
             >
               <div className="min-h-0 overflow-hidden">
@@ -244,7 +240,6 @@ export default function Experience() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

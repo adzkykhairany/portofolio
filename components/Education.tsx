@@ -1,10 +1,14 @@
+import SectionGlow from "@/components/SectionGlow";
+
 export default function Education() {
   return (
     <section
       id="education"
-      className="scroll-mt-6 px-6 pb-24 pt-16 md:pb-32 md:pt-20"
+      className="relative scroll-mt-6 overflow-hidden px-6 pb-24 pt-16 md:pb-32 md:pt-20"
     >
-      <div className="mx-auto w-full max-w-7xl">
+      <SectionGlow position="top-left" />
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl">
         {/* Section Label */}
         <p className="mb-16 text-xs font-medium uppercase tracking-[0.35em] text-foreground/40">
           02 — Education

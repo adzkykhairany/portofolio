@@ -1,3 +1,5 @@
+import SectionGlow from "@/components/SectionGlow";
+
 export default function Projects() {
   const projects = [
     {
@@ -27,17 +29,19 @@ export default function Projects() {
         "Excel-based automation system for managing and processing Country-by-Country Report data.",
       technologies: "Excel · VBA · Data Processing",
       year: "2026",
-      demo: "#",
-      github: "#",
+      demo: null,
+      github: null,
     },
   ];
 
   return (
     <section
       id="projects"
-      className="scroll-mt-20 px-6 pb-24 pt-6 md:pb-32 md:pt-8"
+      className="relative scroll-mt-20 overflow-hidden px-6 pb-24 pt-6 md:pb-32 md:pt-8"
     >
-      <div className="mx-auto w-full max-w-7xl">
+      <SectionGlow position="top-left" intensity="soft" />
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl">
         {/* Section Label */}
         <p className="mb-10 text-xs font-medium uppercase tracking-[0.35em] text-foreground/40">
           04 — Projects
@@ -70,25 +74,31 @@ export default function Projects() {
                 </p>
 
                 {/* Links */}
-                <div className="mt-4 flex gap-5 text-xs font-medium">
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground/50 transition-colors hover:text-primary"
-                  >
-                    Live Demo ↗
-                  </a>
+                {(project.demo || project.github) && (
+                  <div className="mt-4 flex gap-5 text-xs font-medium">
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-foreground/50 transition-colors hover:text-primary"
+                      >
+                        Live Demo ↗
+                      </a>
+                    )}
 
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground/50 transition-colors hover:text-primary"
-                  >
-                    GitHub ↗
-                  </a>
-                </div>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-foreground/50 transition-colors hover:text-primary"
+                      >
+                        GitHub ↗
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Year */}

@@ -43,9 +43,9 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 border-b border-foreground/10 bg-background/80 text-foreground backdrop-blur-md">
       <div className="flex items-center justify-between px-8 py-4">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em]">
+        <a href="#home" className="text-sm font-semibold uppercase tracking-[0.2em]">
           AK
-        </p>
+        </a>
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-6 md:flex">
